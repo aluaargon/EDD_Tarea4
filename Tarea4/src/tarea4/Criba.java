@@ -28,11 +28,7 @@ public class Criba {
 				}
 			}
 			// ¿Cuantos primos hay?
-			int cuenta = 0;
-			for (i = 0; i<dim; i++) {
-					if (esPrimo[i])
-							cuenta++;
-			}
+			int cuenta = cuantosPrimos(dim, esPrimo);
 				
 			// Rellenar el vector de numeros primos
 			int[] primos = new int[cuenta];
@@ -47,6 +43,15 @@ public class Criba {
 			// Vector vacio
 		}
 		
+	}
+	private static int cuantosPrimos(int dim, boolean[] esPrimo) {
+		int i;
+		int cuenta = 0;
+		for (i = 0; i<dim; i++) {
+				if (esPrimo[i])
+						cuenta++;
+		}
+		return cuenta;
 	}
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
