@@ -31,18 +31,25 @@ public class Criba {
 			int cuenta = cuantosPrimos(dim, esPrimo);
 				
 			// Rellenar el vector de numeros primos
-			int[] primos = new int[cuenta];
-			for (i = 0, j = 0; i<dim; i++) {
-				if (esPrimo[i]) 
-						primos[j++] = i;
-
-			}
+			int[] primos = rellenaVector(dim, esPrimo, cuenta);
+			
 			return primos;
 		}else { // max < 2
 			return new int[0];
 			// Vector vacio
 		}
 		
+	}
+	private static int[] rellenaVector(int dim, boolean[] esPrimo, int cuenta) {
+		int i;
+		int j;
+		int[] primos = new int[cuenta];
+		for (i = 0, j = 0; i<dim; i++) {
+			if (esPrimo[i]) 
+					primos[j++] = i;
+
+		}
+		return primos;
 	}
 	private static int cuantosPrimos(int dim, boolean[] esPrimo) {
 		int i;
