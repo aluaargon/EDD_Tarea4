@@ -53,7 +53,7 @@ public class Criba {
 		System.out.println("Intdroduce el numero para la criba de Erastotenes");
 		int dato = teclado.nextInt();
 		int vector[] = new int[dato];
-		System.out.println("\nVector inicial hasta :" + dato);
+		System.out.println("\nVector inicial hasta:" + dato);
 		for (int i = 0; i < vector.length; i++) {
 			if (i%10 == 0) System.out.println();
 			System.out.print(i+1+"\t");
