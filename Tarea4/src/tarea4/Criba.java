@@ -88,7 +88,7 @@ public class Criba {
 			System.out.print(vector[i]+"\t");
 		}
 		
-		
+		teclado.close();
 	}
 	
 }
