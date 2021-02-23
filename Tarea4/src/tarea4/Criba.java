@@ -1,10 +1,21 @@
 package tarea4;
 
 import java.util.Scanner;
-
+/**
+ * Clase que te saca los numeros primos desde 0 hasta el maximo 
+ * que introduzca el usuario.
+ * @author Aaron Ruiz
+ * @version 2021
+ *
+ */
 public class Criba {	
-	
-	//Generar numeros primos del 1 al max
+	 
+	/**
+	 * Generar numeros primos del 1 al max
+	 * @param max el maximo de numeros primos que quiere el usuario
+	 * @return los numeros primos hasta el maximo introducido por el usuario
+	 * si es menor que dos no devuelve nada
+	 */
 	public static int[] generarPrimos(int max) 
 	{
 	
@@ -19,7 +30,7 @@ public class Criba {
 			// Eliminar el 0 y el 1, que no son primos
 			esPrimo[0] = esPrimo[1] = false;
 			// Criba
-			i = criba(dim, esPrimo);
+			criba(dim, esPrimo);
 			// ¿Cuantos primos hay?
 			int cuenta = cuantosPrimos(dim, esPrimo);
 				
@@ -33,24 +44,41 @@ public class Criba {
 		}
 		
 	}
-	private static int criba(int dim, boolean[] esPrimo) {
+	/**
+	 * Saca los numeros primos con el metodo de la criba
+	 * @param dim es el maximo introducido por el usuario
+	 * @param esPrimo Un array donde guardamos si un numero es primo o no
+	 *
+	 */
+	private static void criba(int dim, boolean[] esPrimo) {
 		int i;
-		int j;
 		for (i = 2; i < Math.sqrt(dim); i++) {
 			if (esPrimo[i]) {
 			// Eliminar los multiplos de i
-			j = eliminarMultiplosI(i, dim, esPrimo);
+				eliminarMultiplosI(i, dim, esPrimo);
 						
 			}
 		}
-		return i;
 	}
-	private static int eliminarMultiplosI(int i, int dim, boolean[] esPrimo) {
-		int j;
-		for (j=2*i; j<dim; j+=i)
+	 /**
+	  * Este metodo elmina los multiplos de el numero primo
+	  * @param i el numero primo
+	  * @param dim es el maximo introducido por el usuario
+	  *	@param esPrimo Un array donde guardamos si un numero es primo o no
+	  */
+	private static void eliminarMultiplosI(int i, int dim, boolean[] esPrimo) {
+		
+		for (int j=2*i; j<dim; j+=i)
 				esPrimo[j] = false;
-		return j;
+		
 	}
+	/**
+	 * 
+	 * @param dim es el maximo introducido por el usuario
+	 * @param esPrimo Un array donde guardamos si un numero es primo o no
+	 * @param El numero de primos
+	 * @return un vector con los numero primos
+	 */
 	private static int[] rellenaVector(int dim, boolean[] esPrimo, int cuenta) {
 		int i;
 		int j;
@@ -62,6 +90,13 @@ public class Criba {
 		}
 		return primos;
 	}
+	/**
+	 * 
+	 * @param dim es el maximo introducido por el usuario
+	 * @param esPrimo Un array donde guardamos si un numero es primo o no
+	 * @return devuelve en numero cuantos numeros primos son los que hay hasta
+	 * el maximo introducido por el usuario
+	 */
 	private static int cuantosPrimos(int dim, boolean[] esPrimo) {
 		int i;
 		int cuenta = 0;
