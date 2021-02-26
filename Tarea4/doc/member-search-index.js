@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"tarea4","c":"Criba","l":"Criba()","url":"%3Cinit%3E()"},{"p":"tarea4","c":"Criba","l":"generarPrimos(int)"},{"p":"tarea4","c":"Criba","l":"main(String[])","url":"main(java.lang.String[])"}]
